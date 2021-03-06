@@ -1,1 +1,0 @@
-"use strict";Dropzone.autoDiscover=false;jQuery(document).ready(function(){$('#basic-dropzone-upload').dropzone();$('#single-upload-dropzone').dropzone({maxFiles:1,maxFilesize:1});$('#multple-file-upload').dropzone({maxFiles:10,maxFilesize:10});$('#file-validation').dropzone({maxFiles:10,maxFilesize:10,acceptedFiles:"image/*,application/pdf,.psd",});});
