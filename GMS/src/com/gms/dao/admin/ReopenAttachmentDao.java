@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gms.commons.Common;
 import com.gms.commons.DBConnection;
 import com.gms.model.admin.ReopenAttachment;
 
@@ -81,6 +82,8 @@ public class ReopenAttachmentDao {
             return cst.executeUpdate() > 0;
         } catch (SQLException ex) {
         	ex.printStackTrace();
+        	Common.LogError(ex);
+			
         } finally {
             if (cst != null) {
                 DBConnection.closeStatement(cst);
@@ -121,6 +124,8 @@ public class ReopenAttachmentDao {
 			return list;
         } catch (SQLException ex) {
         	ex.printStackTrace();
+        	Common.LogError(ex);
+			
         } finally {
             if (cst != null) {
                 DBConnection.closeStatement(cst);
@@ -231,6 +236,8 @@ public class ReopenAttachmentDao {
 			return reAttach;
         } catch (SQLException ex) {
         	ex.printStackTrace();
+        	Common.LogError(ex);
+			
         } finally {
             if (cst != null) {
                 DBConnection.closeStatement(cst);
@@ -253,6 +260,8 @@ public class ReopenAttachmentDao {
 		      return cst.executeUpdate() > 0; 
 		 } catch (SQLException ex) {
 			  ex.printStackTrace();
+			  Common.LogError(ex);
+				
 		 } finally {
 			 if (cst != null) {
 				 DBConnection.closeStatement(cst);

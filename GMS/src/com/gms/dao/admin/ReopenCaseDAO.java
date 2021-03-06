@@ -59,7 +59,8 @@ public class ReopenCaseDAO {
 			return grievanceDesc;
 	    } catch (SQLException ex) {
 	       	 ex.printStackTrace();
-	       	Logger.getLogger(ReopenCaseDAO.class.getName()).log(Level.SEVERE, null, ex);
+	       	Common.LogError(ex);
+			Logger.getLogger(ReopenCaseDAO.class.getName()).log(Level.SEVERE, null, ex);
 	    } finally {
             if (cst != null) {
                 DBConnection.closeStatement(cst);
@@ -94,6 +95,7 @@ public class ReopenCaseDAO {
 	        return list;
 		} catch (Exception ex) {
 				ex.printStackTrace();
+				Common.LogError(ex);
 				Logger.getLogger(ReopenCaseDAO.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
 			if (cst != null) {
@@ -132,6 +134,7 @@ public class ReopenCaseDAO {
 			return true;
 		} catch (Exception ex) {
 			ex.printStackTrace();
+			Common.LogError(ex);
 			Logger.getLogger(ReopenCaseDAO.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
 			if(cst != null) {
@@ -196,6 +199,7 @@ public class ReopenCaseDAO {
 	        return list;
 		} catch (Exception ex) {
 				ex.printStackTrace();
+				Common.LogError(ex);
 				Logger.getLogger(ReopenCaseDAO.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
 			if (cst != null) {
@@ -235,6 +239,7 @@ public class ReopenCaseDAO {
 		        return list;
 			} catch (Exception ex) {
 					ex.printStackTrace();
+					Common.LogError(ex);
 					logger.info("Exception Inside the getMailData() method Exception "+ex.getMessage());
 			} finally {
 				if (cst != null) {
@@ -287,6 +292,7 @@ public class ReopenCaseDAO {
 				 	con.commit();
 			} catch(Exception ex) {
 				ex.printStackTrace();
+				Common.LogError(ex);
 				System.out.println(ex.getMessage());
 			} finally {
 				if(ps != null) {

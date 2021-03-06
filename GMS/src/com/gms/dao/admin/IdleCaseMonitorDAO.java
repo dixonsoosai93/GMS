@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.gms.commons.Common;
 import com.gms.commons.DBConnection;
 import com.gms.model.admin.IdleCaseMonitor;
 
@@ -34,6 +35,7 @@ public class IdleCaseMonitorDAO {
 	        return list;
 		} catch (Exception ex) {
 				ex.printStackTrace();
+				Common.LogError(ex);
 				Logger.getLogger(IdleCaseMonitorDAO.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
 			if (cst != null) {

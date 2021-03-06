@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.gms.commons.Common;
 import com.gms.commons.DBConnection;
 import com.gms.model.admin.GridCase;
 import com.gms.model.admin.GrievanceDesc;
@@ -58,8 +59,10 @@ public class AlternateInvReAssignDAO {
 			return grievanceDesc;
 	    } catch (SQLException ex) {
 	       	 ex.printStackTrace();
-	       	logger.info("Exception Inside GrievanceDesc() method Exception"+ex.getMessage());
+	       	Common.LogError(ex);
+			logger.info("Exception Inside GrievanceDesc() method Exception"+ex.getMessage());
 	       	Logger.getLogger(AlternateInvReAssignDAO.class.getName()).log(Level.SEVERE, null, ex);
+	       	Common.LogError(ex);
 	    } finally {
             if (cst != null) {
                 DBConnection.closeStatement(cst);
@@ -96,7 +99,9 @@ public class AlternateInvReAssignDAO {
 	        return list;
 		} catch (Exception ex) {
 				ex.printStackTrace();
+				Common.LogError(ex);
 				logger.info("Exception Inside getGridCase() method Exception"+ex.getMessage());
+				Common.LogError(ex);
 				Logger.getLogger(AlternateInvReAssignDAO.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
 			if (cst != null) {
@@ -135,6 +140,7 @@ public class AlternateInvReAssignDAO {
 			return list;
 		} catch (Exception ex) {
 			ex.printStackTrace();
+			Common.LogError(ex);
 			logger.info("Exception Inside getRhrList() method Exception"+ex.getMessage());
 			Logger.getLogger(AlternateInvReAssignDAO.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
@@ -172,6 +178,7 @@ public class AlternateInvReAssignDAO {
 			return list;
 		} catch (Exception ex) {
 			ex.printStackTrace();
+			Common.LogError(ex);
 			logger.info("Exception Inside GrievanceDesc() method Exception"+ex.getMessage());
 			Logger.getLogger(AlternateInvReAssignDAO.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
@@ -209,6 +216,7 @@ public class AlternateInvReAssignDAO {
 	        return list;
 		} catch (Exception ex) {
 				ex.printStackTrace();
+				Common.LogError(ex);
 				logger.info("Exception Inside GrievanceDesc() method Exception"+ex.getMessage());
 				Logger.getLogger(AlternateInvReAssignDAO.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
@@ -240,6 +248,7 @@ public class AlternateInvReAssignDAO {
 			return true;
 		} catch (Exception ex) {
 			ex.printStackTrace();
+			Common.LogError(ex);
 			logger.info("Exception Inside GrievanceDesc() method Exception"+ex.getMessage());
 			Logger.getLogger(AlternateInvReAssignDAO.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {

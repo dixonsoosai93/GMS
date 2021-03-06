@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.gms.commons.Common;
 import com.gms.commons.DBConnection;
 import com.gms.model.admin.GridCase;
 import com.gms.model.admin.GrievanceDesc;
@@ -51,7 +52,8 @@ public class TransferCaseDAO {
 			return grievanceDesc;
 	    } catch (SQLException ex) {
 	       	 ex.printStackTrace();
-	       	Logger.getLogger(TransferCaseDAO.class.getName()).log(Level.SEVERE, null, ex);
+	       	Common.LogError(ex);
+			Logger.getLogger(TransferCaseDAO.class.getName()).log(Level.SEVERE, null, ex);
 	    } finally {
             if (cst != null) {
                 DBConnection.closeStatement(cst);
@@ -85,6 +87,7 @@ public class TransferCaseDAO {
 	        return list;
 		} catch (Exception ex) {
 				ex.printStackTrace();
+				Common.LogError(ex);
 				Logger.getLogger(TransferCaseDAO.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
 			if (cst != null) {
@@ -113,6 +116,7 @@ public class TransferCaseDAO {
 			return true;
 		} catch (Exception ex) {
 			ex.printStackTrace();
+			Common.LogError(ex);
 			Logger.getLogger(TransferCaseDAO.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
 			if(cst != null) {
